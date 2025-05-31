@@ -1,0 +1,253 @@
+/* Reset & basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d1117;
+  color: white;
+  text-align: center;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #161b22;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: default;
+}
+.gradient-text {
+  background: linear-gradient(45deg, #00bfff, #ff00ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: 700;
+  font-size: 18px;
+  position: relative;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #00bfff;
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+nav a:hover {
+  color: #00bfff;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  flex-grow: 1;
+  background: linear-gradient(135deg, #000428, #004e92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 70vh;
+}
+
+.hero-content {
+  max-width: 800px;
+  text-align: center;
+  z-index: 2;
+}
+
+.glow-text {
+  font-size: 3.5rem;
+  color: #00bfff;
+  text-shadow: 0 0 20px #00bfff;
+  animation: glowPulse 2s ease-in-out infinite alternate;
+  margin-bottom: 15px;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff;
+  }
+  to {
+    text-shadow: 0 0 25px #ff00ff, 0 0 40px #ff00ff, 0 0 55px #ff00ff;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #ddd;
+  margin-bottom: 35px;
+  line-height: 1.5;
+}
+
+.emoji {
+  font-size: 1.8rem;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Tech icons floating animation */
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+.tech-item {
+  width: 160px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,191,255,0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  animation: float 4s ease-in-out infinite;
+}
+.tech-item:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 8px 25px #00bfff;
+}
+
+/* Float keyframe */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-3deg); }
+}
+
+/* Footer */
+footer {
+  background: #161b22;
+  padding: 20px;
+  font-size: 14px;
+  color: #888;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero-content {
+    padding: 0 15px;
+  }
+  .glow-text {
+    font-size: 2.4rem;
+  }
+  .tech-icons {
+    gap: 30px;
+  }
+  .tech-item {
+    width: 120px;
+  }
+  nav a {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+}
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-top: 15px;
+  display: block;
+  color: white;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #0d1117;
+  color: white;
+  box-shadow: inset 0 0 5px #00bfff;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 8px #00bfff;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 18px;
+  color: #fff;
+  background: linear-gradient(45deg, #00bfff, #ff00ff);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #ff00ff, #00bfff);
+  transform: scale(1.05);
+}
+/* Footer fixé en bas, pleine largeur, toujours visible */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #161b22;
+  color: #888;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  z-index: 1000;
+}
+
+/* Pour que le contenu principal ne soit pas caché par le footer fixé */
+body {
+  padding-bottom: 50px; /* adapte selon la hauteur du footer */
+}
+body {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+body.fade-out {
+  opacity: 0;
+}

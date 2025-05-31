@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Emilien Autran</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo"><span class="gradient-text">EMILIEN AUTRAN</span></div>
+    <nav>
+      <a href="index.html" class="nav-link">🏠 Accueil</a>
+      <a href="presentation.html" class="nav-link">🧑‍💻 Présentation</a>
+      <a href="competences.html" class="nav-link">🚀 Compétences</a>
+      <a href="experiences.html" class="nav-link">📜 Expériences</a>
+      <a href="contact.html" class="nav-link active">📩 Contact</a>
+    </nav>
+  </header>
+
+  <main class="content card">
+    <h2>📩 Contactez-moi</h2>
+    <p>Vous souhaitez en savoir plus, discuter d’un projet ou simplement dire bonjour ? N’hésitez pas à me contacter !</p>
+
+    <form id="contactForm" action="#" method="post" class="contact-form">
+      <label for="name">Nom complet :</label><br />
+      <input type="text" id="name" name="name" placeholder="Votre nom" required /><br />
+
+      <label for="email">Adresse email :</label><br />
+      <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required /><br />
+
+      <label for="message">Message :</label><br />
+      <textarea id="message" name="message" rows="5" placeholder="Votre message ici..." required></textarea><br />
+
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+
+    <section class="contact-info" style="margin-top:30px;">
+      <p>📧 <a href="mailto:emilien.autran@gmail.com" class="gradient-text">emilien.autran@gmail.com</a></p>
+      <p>📞 07-68-67-55-97</p>
+      <p>📍 Pertuis, France</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Emilien Autran | Portfolio</p>
+  </footer>
+
+</body>
+</html>
