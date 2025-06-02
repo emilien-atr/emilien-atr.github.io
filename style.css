@@ -239,15 +239,95 @@ footer {
   font-size: 14px;
   z-index: 1000;
 }
+main {
+  min-height: calc(100vh - 120px); /* Hauteur de l'écran - header - footer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.main-content {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
 
-/* Pour que le contenu principal ne soit pas caché par le footer fixé */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #00ffff;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.card {
+  background: #1e1e2f;
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.card i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #00ffff;
+}
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #00ffff;
+}
+
+.softskills {
+  margin-top: 3rem;
+}
+
+.softskills h2 {
+  font-size: 1.8rem;
+  color: #00ffff;
+}
+
+.softskills ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.softskills li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #fff;
+}
+/* Fait que le body prenne toute la hauteur de l'écran */
 body {
-  padding-bottom: 50px; /* adapte selon la hauteur du footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-body {
-  opacity: 1;
-  transition: opacity 0.2s ease;
+
+/* Le main prend tout l'espace restant */
+main {
+  flex: 1;
 }
-body.fade-out {
-  opacity: 0;
-}
+
+
