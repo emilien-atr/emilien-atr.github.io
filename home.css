@@ -268,25 +268,10 @@ main {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* toujours 3 colonnes sur desktop */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   padding: 1rem 0;
 }
-
-/* Responsive : passe à 2 colonnes en tablette */
-@media (max-width: 900px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Responsive mobile : 1 colonne */
-@media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 
 .card {
   background: #1e1e2f;
@@ -367,4 +352,100 @@ main {
 .logo-glow:hover {
   transform: scale(1.05);
   text-shadow: 0 0 10px #00ffff, 0 0 20px #00c3ff, 0 0 30px #00c3ff;
+}
+/* --- Images à gauche et à droite --- */
+.tech-image {
+  flex: 1;
+  max-width: 250px;
+}
+
+.tech-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+/* --- Section principale --- */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 3rem;
+  gap: 2rem;
+}
+
+/* --- Texte central --- */
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #00ffff;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.cta-button {
+  padding: 0.8rem 1.5rem;
+  background-color: #00ffff;
+  color: #001f3f;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+/* Cacher le bouton hamburger sur desktop */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Masquer la navigation sur mobile par défaut */
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+/* Responsive pour écran petit : menu hamburger visible, nav cachée */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #161b22;
+    position: absolute;
+    top: 70px; /* hauteur header */
+    right: 40px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 191, 255, 0.3);
+    z-index: 2000;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-link {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
 }

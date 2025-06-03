@@ -4,17 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Emilien Autran - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
 
 <header class="header">
-  <a href="index.html" class="logo">
-    <span class="gradient-text">EMILIEN AUTRAN</span>
-  </a>
-  <nav>
-    <a href="presentation.html" class="nav-link">🧑‍💻 Présentation</a>
+  <a href="index.html" class="logo-glow">EMILIEN AUTRAN</a>
+
+  <!-- Bouton hamburger -->
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <nav class="nav-links">
+    <a href="presentation.html" class="nav-link active">🧑‍💻 Présentation</a>
     <a href="competences.html" class="nav-link">🚀 Compétences</a>
     <a href="experiences.html" class="nav-link">📜 Expériences</a>
     <a href="contact.html" class="nav-link">📩 Contact</a>
@@ -22,20 +26,23 @@
 </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <h1 class="glow-text">Bienvenue sur mon Portfolio !</h1>
-      <p class="hero-subtitle">
-        <span class="emoji">💻</span> Passionné d'informatique &nbsp;&nbsp; 
-        <span class="emoji">🖨️</span> d'impression 3D,<br />
-        j'expérimente avec ma propre imprimante 3D et je découvre de nouvelles technologies !
+    <div class="tech-image">
+      <img src="PC.png" alt="PC" />
+    </div>
+
+    <div class="hero-text">
+      <h1>Bienvenue sur mon CV interactif</h1>
+      <p>
+        Je suis Emilien, lycéen passionné par l’informatique, les technologies, et l’impression 3D. <br />
+        Ce site est mon CV interactif : découvrez mes projets, mes compétences et mon univers !
       </p>
-      <div class="tech-icons">
-        <img src="PC.png" alt="PC Gaming" class="tech-item" />
-        <img src="I3D.png" alt="Imprimante 3D" class="tech-item" />
-      </div>
+      <a href="presentation.html" class="cta-button">Découvrir mon profil</a>
+    </div>
+
+    <div class="tech-image">
+      <img src="I3D.png" alt="Imprimante 3D" />
     </div>
   </section>
-  </div>
 
   <footer>
     <p>© 2025 Emilien Autran | Portfolio</p>
