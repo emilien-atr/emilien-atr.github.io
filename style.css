@@ -477,3 +477,12 @@ main {
     font-size: 13px;
   }
 }
+
+/* Supprime les soulignements du logo et du bouton "Retour à l'accueil" */
+.logo,
+.logo:hover,
+.btn,
+.btn:hover {
+  text-decoration: none;
+}
+
