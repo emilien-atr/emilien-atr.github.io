@@ -369,34 +369,24 @@ main {
   text-shadow: 0 0 10px #00ffff, 0 0 20px #00c3ff, 0 0 30px #00c3ff;
 }
 
-@media screen and (max-width: 600px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-  }
+
+
 
   .logo {
-    font-size: 18px;
-    max-width: 60%;
+    font-size: 22px;
+    margin-bottom: 5px;
   }
 
   nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-end;
-    font-size: 13px;
+    flex-direction: column;
+    gap: 8px;
   }
 
   nav a {
-    font-size: 14px;
-    padding: 5px;
-    margin: 0;
+    font-size: 16px;
+    margin: 5px 0;
   }
-}
-
 
   .main-content {
     padding: 1rem;
@@ -452,5 +442,38 @@ main {
   .hero-subtitle {
     font-size: 1rem;
     padding: 0 10px;
+  }
+
+/* ✅ OPTIMISATION MOBILE AMÉLIORÉE - Header compact */
+@media screen and (max-width: 600px) {
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 3px 6px;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .nav-link {
+    font-size: 13px;
   }
 }
